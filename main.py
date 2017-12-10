@@ -17,8 +17,7 @@ def get_conn(dbname=None, dbuser=None, dbpass=None):
     return conn
 
 if __name__ == '__main__':
-    with get_conn(dbname='dvdtwo', dbuser='chris') as conn:
+    with get_conn(dbname='dvdrentals', dbuser='chris') as conn:
         df = pd.read_sql('select * from film', conn)
 
         print(df)
-

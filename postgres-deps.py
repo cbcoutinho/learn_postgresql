@@ -4,7 +4,7 @@
 #   https://sigterm.sh/2010/07/09/generating-a-dependency-graph-for-a-postgresql-database/
 #
 # And executed as follows after loading the dvdrentals.tar file:
-#   python postgres-deps.py --dbname dvdtwo --dbuser chris | dot -Tpng > deps.png
+#   python postgres-deps.py --dbname dvdrentals --dbuser chris | dot -Tpng > deps.png
 
 from optparse import OptionParser, OptionGroup
 
