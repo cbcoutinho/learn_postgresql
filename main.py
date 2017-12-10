@@ -17,7 +17,11 @@ def get_conn(dbname=None, dbuser=None, dbpass=None):
     return conn
 
 if __name__ == '__main__':
+    sql_query = """
+    SELECT * FROM film
+    """
+
     with get_conn(dbname='dvdrentals', dbuser='chris') as conn:
-        df = pd.read_sql('SELECT * FROM film', conn)
+        df = pd.read_sql(sql_query, conn)
 
         print(df)
