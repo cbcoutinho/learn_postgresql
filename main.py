@@ -16,6 +16,13 @@ def get_conn(dbname=None, dbuser=None, dbpass=None):
 
     return conn
 
+def execute_query(sql_query=None, dbname='None'):
+    
+    with get_conn(dbname=dbname, dbuser='chris') as conn:
+        df = pd.read_sql(sql_query, conn)
+
+    return df
+
 if __name__ == '__main__':
     # sql_query = """
     # SELECT * FROM film
@@ -35,7 +42,5 @@ if __name__ == '__main__':
     ORDER BY title
     """
 
-    with get_conn(dbname='dvdrentals', dbuser='chris') as conn:
-        df = pd.read_sql(sql_query, conn)
-
-        print(df)
+    df = execute_query(sql_query, 'dvdrentals')
+    print(df)
