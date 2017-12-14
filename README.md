@@ -11,5 +11,14 @@ using the following command:
 
 ```bash
 $ createdb dvdrentals
-$ pg_restore -C -d dvdrentals dvdrental.tar
+$ pg_restore --clean --dbname=dvdrentals dvdrental.tar
+```
+
+To restore the exercises database, use the following commands.
+ NOTE: If the database is already created, it errors out on the
+ (--create/-C) flag.
+
+```bash
+$ createdb exercises
+$ pg_restore --clean --dbname=exercises --exit-on-error exercises.tar
 ```
